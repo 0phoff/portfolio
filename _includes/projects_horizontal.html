@@ -4,21 +4,24 @@
   {%- else -%}
   <a href="{{ project.url | relative_url }}">
   {%- endif -%}
-    <div class="card hoverable">
+    <div class="card hoverable card-horizontal">
       <div class="row g-0">
         {%- if project.img -%}
         <div class="card-img col-md-6">
-          {% include figure.html path=project.img alt="project thumbnail" %}
+          {% include figure.html path=project.img alt="project thumbnail" class=project.imgclass %}
         </div>
         <div class="col-md-6">
         {%- else -%}
         <div class="col-md-12">
         {%- endif -%}
           <div class="card-body">
-            <h3 class="card-title text-lowercase">{{ project.title }}</h3>
+            <h3 class="card-title text-uppercase">{{ project.title }}</h3>
+            {%- if project.meta -%}
+            <p class="card-text card-meta">{{ project.meta }}</p>
+            {%- endif -%}
             <p class="card-text">{{ project.description }}</p>
+            {%- if project.github -%}
             <div class="row ml-1 mr-1 p-0">
-              {%- if project.github -%}
               <div class="github-icon">
                 <div class="icon" data-toggle="tooltip" title="Code Repository">
                   <a href="{{ project.github }}"><i class="fab fa-github gh-icon"></i></a>
@@ -30,8 +33,8 @@
                 </span>
                 {%- endif -%}
               </div>
-              {%- endif -%}
             </div>
+            {%- endif -%}
           </div>
         </div>
       </div>
