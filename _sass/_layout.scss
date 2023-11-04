@@ -56,9 +56,14 @@ body.overflowx {
 /*****************************************************************************
 * About
 *****************************************************************************/
+@media (min-aspect-ratio: 4/3) {
+  .about-section {
+    min-height: calc(100vh - 58px - 3rem);
+  }
+}
+
 .about-section {
   width: 100%;
-  min-height: calc(100vh - 58px - 3rem);
   margin-bottom: 5px;
   display: grid;
   grid-template-columns: 5fr 2fr;
