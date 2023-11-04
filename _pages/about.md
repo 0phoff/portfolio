@@ -5,7 +5,7 @@ permalink: /
 bodyclass: overflowx color-footer
 
 profile:
-  image: prof_pic.jpg
+  image: prof-pic-03.jpg
 
 # Adapt $slogan-items in _layout.scss:126
 slogan:
