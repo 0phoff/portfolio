@@ -203,14 +203,28 @@ $slogan-swap: calc($slogan-length / 4);
 
   position: relative;
   width: 100%;
-  padding: 3rem 0;
+  margin-top: 3rem;
+  padding: 0 0 3rem;
 
   &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX( -50%);
+    height: 50%;
+    width: 100vw;
+    transform: translateX(-50%) skewY(3deg);
+    transform-origin: 100% 0;
+    background: var(--global-theme-color);
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     height: 100%;
     width: 100vw;
     background: var(--global-theme-color);
