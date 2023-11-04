@@ -1,26 +1,58 @@
 ---
 layout: about
-title: about
+title: Home
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+bodyclass: overflowx color-footer
 
 profile:
-  align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
-news: true  # includes a list of news items
-latest_posts: true  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
+# Adapt $slogan-items in _layout.scss:126
+slogan:
+  - Computer Vision
+  - Python
+  - Object Detection
+  - Multimodal Fusion
+  - Pytorch
+  - Embedded Linux
+  - C / C++
+  - Deep Learning
+
+skills:
+  - name: Python
+    value: 97
+  - name: Pytorch
+    value: 93
+  - name: Pandas
+    value: 90
+  - name: Web Technologies
+    value: 72
+  - name: C / C++
+    value: 65
+  - name: Linux
+    value: 85
+  - name: Problem Solving
+    value: 80
+  - name: Communication
+    value: 72
+  - name: Data Visualisation
+    value: 87
+  - name: Project Management
+    value: 65
+  - name: Learning
+    value: 82
+  - name: Creativity
+    value: 75
+
 social: true  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a detail-oriented computer vision engineer who loves to work with new technologies in order to solve today's challenges.
+As a highly experienced programmer, I strive to build robust applications and pipelines in many different programming languages such as Python, C/C++ & JavaScript.
+I possess an unwavering passion for everything related to AI and love to tinker around on my different linux machines.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+From 2017 to 2023, I worked as a PhD researcher at the [EAVISE](https://eavise.be) research group of the KU Leuven.
+I worked on a variety of different projects for industrial partners, researching how to best optimize object detection from aerial viewpoints.
+In that time, I designed pipelines to run neural networks on huge satellite orthomosaic images, I improved object detection models by fusing different modalities such as RGB and depth images and I explored different methodologies to improve the latency of convolutional neural networks with the goal of deploying them on embedded GPUs.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+As a post-doctoral researcher, I currently investigate multi-object detection & tracking in a project about [24/7 dog monitoring]({% link _projects/phd-04-jnj.md %}).

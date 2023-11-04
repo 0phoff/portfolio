@@ -1,30 +1,41 @@
 ---
 layout: page
-title: projects
+title: Projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: 
 nav: true
-nav_order: 2
-display_categories: [work, fun]
-horizontal: false
+nav_order: 1
+categories:
+  - key: phd
+    name: EAVISE
+    display: horizontal
+  - key: code
+    name: Code & Data
+    display: flexgrid
 ---
 
 <!-- pages/projects.md -->
 <div class="projects">
-{%- if site.enable_project_categories and page.display_categories %}
+{%- if site.enable_project_categories and page.categories %}
   <!-- Display categorized projects -->
-  {%- for category in page.display_categories %}
-  <h2 class="category">{{ category }}</h2>
-  {%- assign categorized_projects = site.projects | where: "category", category -%}
+  {%- for category in page.categories %}
+  <h2 class="category">{{ category.name }}</h2>
+  {%- assign categorized_projects = site.projects | where: "category", category.key -%}
   {%- assign sorted_projects = categorized_projects | sort: "importance" %}
   <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
+  {% if category.display == "horizontal" -%}
   <div class="container">
-    <div class="row row-cols-2">
+    <div class="row row-cols-1">
     {%- for project in sorted_projects -%}
       {% include projects_horizontal.html %}
     {%- endfor %}
     </div>
+  </div>
+  {% elsif category.display == "flexgrid" -%}
+  <div class="flexgrid">
+    {%- for project in sorted_projects -%}
+      {% include projects_flexgrid.html %}
+    {%- endfor %}
   </div>
   {%- else -%}
   <div class="grid">
