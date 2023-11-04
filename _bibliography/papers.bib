@@ -1,84 +1,179 @@
----
----
-
-@string{aps = {American Physical Society,}}
-
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+@phdthesis{ophoff_phd,
+  title       = {Aerial Object Detection},
+  author      = {Ophoff, Tanguy and Goedem{\'e}, Toon and Van Beeck, Kristof},
+  year        = {2023},
+  date        = {2023-06-26},
+  url         = {https://lirias.kuleuven.be/4085681},
+  bibtex_show = {true},
+  pdf         = {https://lirias.kuleuven.be/retrieve/717234},
+  abstract    = {
+Nowadays, most computer vision problems are solved using artificial intelligence. These techniques outperform traditional computer vision algorithms in most scenarios and even allow the use of computer vision for a variety of challenging new fields. One of these fields is remote sensing. Using artificial intelligence we are able to automatically extract complex metadata, which aids in the decision making process of governments, industries, etc. Nevertheless, several key challenges remain to be solved in order to successfully deploy these algorithms:  
+1. One of the main challenges in this field is to cope with the huge amount of data. Indeed, aerial orthomosaics are often in the order of 10⁹ square pixels large. Detecting objects, which can be as small as a few hundred square pixels in size, quickly becomes extremely challenging.
+2. Privacy is a big social issue with remote sensing data. A lot of aerial images indeed capture data across huge regions, disregarding private areas or people who might be visible in the data. One possible solution is to process the images on-board on the sensor devices themselves. However, running artificial neural networks on constrained devices remains a major challenge.
+3. The majority of computer vision algorithms work on traditional red-green-blue image data. However, a lot of remote sensing sensors offer additional types of data, giving opportunities to improve our algorithms. We still need to find a solution to optimally use these new types of data and to integrate them with the traditional image data.
+During this PhD we worked on three different object detection use cases, while finding an optimal solution for the aforementioned challenges.
+Firstly, we developed a pipeline to run object detection networks on remote sensing data. Our initial pipeline processed the orthomosaic with a sliding window, adding overlap between the different image patches. While this proved it is possible to adapt artificial intelligence to remote sensing use cases, we also improved the results significantly by implementing a series of scene-specific pre- and post-processing steps.
+Secondly, we researched the added value of sensor fusion. More specifically, we developed a technique to merge different types of data in a neural network and applied it to object detection on red-green-blue and depth data. We tested our technique on a variety of different datasets, demonstrating the benefit of fusing this data for both natural and remote sensing images.
+Thirdly, we implemented a series of techniques in order to reduce the computational complexity of our algorithms, with the goal of running them in real-time on embedded devices. By combining mobile convolutions, pruning and quantisation techniques, we were able to reduce the complexity of a neural network significantly, without sacrificing accuracy.
+To summarize, we developed a variety of techniques which enable object detection networks to run on remote sensing data, clearly demonstrating its feasibility. We also showed that it is possible to further increase the accuracy of our models, when different types of data are available. Finally, we determined that many neural networks are oversized for most tasks, allowing to reduce the computational complexity without sacrificing accuracy.
+  }
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
+@inproceedings{ophoff_rgbd01,
+  title        = {Improving Real-Time Pedestrian Detectors with RGB+Depth Fusion},
+  author       = {Ophoff, Tanguy and Van Beeck, Kristof and Goedem{\'e}, Toon},
+  booktitle    = {15th IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)},
+  year         = {2018},
+  organization = {IEEE},
+  doi          = {10.1109/AVSS.2018.8639110},
+  url          = {https://ieeexplore.ieee.org/document/8639110},
+  bibtex_show  = {true},
+  html         = {https://ieeexplore.ieee.org/document/8639110},
+  pdf          = {https://lirias.kuleuven.be/retrieve/523031},
+  abstract     = {
+In this paper we investigate the benefit of using depth information on top of normal RGB for camera-based pedestrian detection.
+Indeed, depth sensing is easily acquired using depth cameras such as a Kinect or stereo setups.
+We investigate the best way to perform this sensor fusion with a special focus on lightweight single-pass CNN architectures, enabling real-time processing on limited hardware.
+We implement different network architectures, each fusing depth at different layers of our network.
+Our experiments show that midway fusion performs the best, outperforming a regular RGB detector substantially in accuracy.
+Moreover, we prove that our fusion network is better at detecting individuals in a crowd, by demonstrating that it has both a better localization of pedestrians and is better at handling occluded persons.
+The resulting network is computationally efficient and achieves real-time performance on both desktop and embedded GPUs.
+  }
 }
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein, A. and Podolsky, B. and Rosen, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  selected={true}
+@article{ophoff_rgbd02,
+  author         = {Ophoff, Tanguy and Van Beeck, Kristof and Goedem{\'e}, Toon},
+  title          = {Exploring RGB+Depth Fusion for Real-Time Object Detection},
+  journal        = {Sensors},
+  volume         = {19},
+  year           = {2019},
+  number         = {4},
+  article-number = {866},
+  issn           = {1424-8220},
+  doi            = {10.3390/s19040866},
+  publisher      = {MDPI},
+  url            = {https://www.mdpi.com/1424-8220/19/4/866},
+  bibtex_show    = {true},
+  html           = {https://www.mdpi.com/1424-8220/19/4/866},
+  pdf            = {https://lirias.kuleuven.be/retrieve/537525},
+  abstract       = {
+In this paper, we investigate whether fusing depth information on top of normal RGB data for camera-based object detection can help to increase the performance of current state-of-the-art single-shot detection networks.
+Indeed, depth sensing is easily acquired using depth cameras such as a Kinect or stereo setups.
+We investigate the optimal manner to perform this sensor fusion with a special focus on lightweight single-pass convolutional neural network (CNN) architectures, enabling real-time processing on limited hardware.
+For this, we implement a network architecture allowing us to parameterize at which network layer both information sources are fused together.
+We performed exhaustive experiments to determine the optimal fusion point in the network, from which we can conclude that fusing towards the mid to late layers provides the best results.
+Our best fusion models significantly outperform the baseline RGB network in both accuracy and localization of the detections.
+  }
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
+@article{ophoff_speed,
+  author         = {Ophoff, Tanguy and Gullentops, C{\'e}dric and Van Beeck, Kristof and Goedem{\'e}, Toon},
+  title          = {Investigating the Potential of Network Optimization for a Constrained Object Detection Problem},
+  journal        = {Journal of Imaging},
+  volume         = {7},
+  year           = {2021},
+  number         = {4},
+  article-number = {64},
+  issn           = {2313-433X},
+  doi            = {10.3390/jimaging7040064},
+  url            = {https://www.mdpi.com/2313-433X/7/4/64},
+  bibtex_show    = {true},
+  html           = {https://www.mdpi.com/2313-433X/7/4/64},
+  pdf            = {https://lirias.kuleuven.be/retrieve/620965},
+  abstract       = {
+Object detection models are usually trained and evaluated on highly complicated, challenging academic datasets, which results in deep networks requiring lots of computations.
+However, a lot of operational use-cases consist of more constrained situations: they have a limited number of classes to be detected, less intra-class variance, less lighting and background variance, constrained or even fixed camera viewpoints, etc.
+In these cases, we hypothesize that smaller networks could be used without deteriorating the accuracy.
+However, there are multiple reasons why this does not happen in practice.
+Firstly, overparameterized networks tend to learn better, and secondly, transfer learning is usually used to reduce the necessary amount of training data.
+In this paper, we investigate how much we can reduce the computational complexity of a standard object detection network in such constrained object detection problems.
+As a case study, we focus on a well-known single-shot object detector, YoloV2, and combine three different techniques to reduce the computational complexity of the model without reducing its accuracy on our target dataset.
+To investigate the influence of the problem complexity, we compare two datasets: a prototypical academic (Pascal VOC) and a real-life operational (LWIR person detection) dataset.
+The three optimization steps we exploited are: swapping all the convolutions for depth-wise separable convolutions, perform pruning and use weight quantization.
+The results of our case study indeed substantiate our hypothesis that the more constrained a problem is, the more the network can be optimized.
+On the constrained operational dataset, combining these optimization techniques allowed us to reduce the computational complexity with a factor of 349, as compared to only a factor 9.8 on the academic dataset.
+When running a benchmark on an Nvidia Jetson AGX Xavier, our fastest model runs more than 15 times faster than the original YoloV2 model, whilst increasing the accuracy by 5% Average Precision (AP).
+  },
 }
 
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
+@article{ophoff_satellite,
+  author         = {Ophoff, Tanguy and Puttemans, Steven and Kalogirou, Vasileios and Robin, Jean-Philippe and Goedem{\'e}, Toon},
+  title          = {Vehicle and Vessel Detection on Satellite Imagery: A Comparative Study on Single-Shot Detectors},
+  journal        = {Remote Sensing},
+  volume         = {12},
+  year           = {2020},
+  number         = {7},
+  article-number = {1217},
+  issn           = {2072-4292},
+  doi            = {10.3390/rs12071217},
+  publisher      = {MDPI},
+  url            = {https://www.mdpi.com/2072-4292/12/7/1217},
+  bibtex_show    = {true},
+  html           = {https://www.mdpi.com/2072-4292/12/7/1217},
+  pdf            = {https://lirias.kuleuven.be/retrieve/573243},
+  abstract       = {
+In this paper, we investigate the feasibility of automatic small object detection, such as vehicles and vessels, in satellite imagery with a spatial resolution between 0.3 and 0.5 m.
+The main challenges of this task are the small objects, as well as the spread in object sizes, with objects ranging from 5 to a few hundred pixels in length.
+We first annotated 1500 km2, making sure to have equal amounts of land and water data.
+On top of this dataset we trained and evaluated four different single-shot object detection networks: YOLOV2, YOLOV3, D-YOLO and YOLT, adjusting the many hyperparameters to achieve maximal accuracy.
+We performed various experiments to better understand the performance and differences between the models.
+The best performing model, D-YOLO, reached an average precision of 60% for vehicles and 66% for vessels and can process an image of around 1 Gpx in 14 s.
+We conclude that these models, if properly tuned, can thus indeed be used to help speed up the workflows of satellite data analysts and to create even bigger datasets, making it possible to train even better models in the future.
+  },
 }
 
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
+@inproceedings{ophoff_plane,
+  title       = {Improving Object Detection in VHR Aerial Orthomosaics},
+  author      = {Ophoff, Tanguy and Van Beeck, Kristof and Goedem{\'e}, Toon},
+  booktitle   = {Proceedings of the European Conference on Computer Vision Workshops (ECCV Workshops)},
+  year        = {2023},
+  editor      = {Karlinsky, Leonid and Michaeli, Tomer and Nishino, Ko},
+  publisher   = {Springer Nature Switzerland},
+  isbn        = {978-3-031-25066-8},
+  bibtex_show = {true},
+  pdf         = {https://lirias.kuleuven.be/retrieve/701654},
+  abstract    = {
+In this paper we investigate how to improve object detection on very high resolution orthomosaics.
+For this, we present a new detection model ResnetYolo, with a Resnet50 backbone and selectable detection heads.
+Furthermore, we propose two novel techniques to post-process the object detection results: a neighbour based patch NMS algorithm and an IoA based filtering technique.
+Finally, we fuse color and depth data in order to further increase the results of our deep learning model.
+We test these improvements on two distinct, challenging use cases: solar panel and swimming pool detection.
+The images are very high resolution color and elevation orthomosaics, taken from plane photography.
+Our final models reach an average precision of 78.5% and 44.4% respectively, outperforming the baseline models by over 15% AP.
+  },
 }
 
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif}
+@inproceedings{ophoff_erti,
+  author      = {Van Beeck, Kristof and Vandersteegen, Maarten and Ophoff, Tanguy and Tuytelaars, Tinne and Scaramuzza, Davide and Goedem{\'e}, Toon},
+  title       = {Real-Time Embedded Computer Vision on UAVs: UAVision2020 Workshop Summary},
+  publisher   = {Springer},
+  year        = {2021},
+  date        = {2021-01-03},
+  issn        = {978-3-030-66823-5},
+  booktitle   = {Computer Vision – ECCV 2020 Workshops},
+  pages       = {665 - 674},
+  bibtex_show = {true},
+  abstract    = {
+In this paper we present an overview of the contributed work presented at the UAVision2020 (International workshop on Computer Vision for UAVs) ECCV workshop.
+Note that during ECCV2020 this workshop was merged with the VisDrone2020 workshop.
+This paper only summarizes the results of the regular paper track and the ERTI challenge.
+The workshop focused on real-time image processing on-board of Unmanned Aerial Vehicles (UAVs).
+For such applications the computational complexity of state-of-the-art computer vision algorithms often conflicts with the need for real-time operation and the extreme resource limitations of the hardware.
+Apart from a summary of the accepted workshop papers and an overview of the challenge, this work also aims to identify common challenges and concerns which were addressed by multiple authors during the workshop, and their proposed solutions.
+  },
+}
+
+@misc{ophoff_relabeled_epfl,
+  author       = {Ophoff, Tanguy and Van Beeck, Kristof and Goedem{\'e}, Toon},
+  title        = {Relabeled EPFL RGB-D Pedestrian Dataset},
+  howpublished = {\url{http://www.eavise.be/dataset-rgbd-pedestrian-relabeled}},
+  year         = {2018},
+  url          = {http://www.eavise.be/dataset-rgbd-pedestrian-relabeled},
+  html         = {http://www.eavise.be/dataset-rgbd-pedestrian-relabeled},
+  abstract     = {
+The EPFL RGB-D Pedestrian dataset consists of over 5000 RGB + Depth images acquired from an RGB camera and Kinect V2 sensor setup.
+However, the annotations for this dataset do not include persons that are highly occluded.
+This is why we decided to relabel the entire dataset manually, providing bounding boxes for every person in the image - independent of their occlusion level - and instead adding an occlusion percentage value.
+This relabeled dataset was then used to assess the added value of fusing RGB + depth in a single-pass detection network.
+  },
 }
