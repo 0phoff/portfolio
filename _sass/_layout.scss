@@ -22,6 +22,10 @@ body.sticky-bottom-footer {
   padding-bottom: 0;
 }
 
+body.overflowx {
+  overflow-x: hidden;
+}
+
 .container {
   max-width: $max-content-width;
 }
@@ -48,3 +52,231 @@ body.sticky-bottom-footer {
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+/*****************************************************************************
+* About
+*****************************************************************************/
+.about-section {
+  width: 100%;
+  min-height: calc(100vh - 58px - 3rem);
+  margin-bottom: 5px;
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  grid-template-rows: min-content min-content min-content;
+  gap: 0 15px;
+
+  header {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+    text-align: right;
+
+    .slogan {
+      text-transform: uppercase;
+      overflow-y: hidden;
+
+      ul {
+        display: inline-block;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        line-height: 0;
+
+        li {
+          color: var(--global-theme-color);
+          position: relative;
+        }
+      }
+    }
+  }
+
+  figure {
+    margin: 0 !important;
+  }
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  .socials {
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    
+    a i::before {
+      color: var(--global-text-color);
+    }
+
+    a:hover i::before {
+      color: var(--global-theme-color);
+    }
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: auto;
+
+    figure {
+      display: none;
+    }
+  }
+}
+
+// Slogan Animation
+$slogan-items: 8;
+$slogan-time: 3s;
+$slogan-length: calc(100% / $slogan-items);
+$slogan-swap: calc($slogan-length / 4);
+
+.slogan li {
+  animation-fill-mode: forwards;
+}
+
+.slogan li:first-child { animation: #{($slogan-time * $slogan-items)} infinite slogan-1; }
+@keyframes slogan-1 {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #{($slogan-length - $slogan-swap)} {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  #{($slogan-length)} {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  #{(100% - $slogan-swap - 0.01%)} {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  #{(100% - $slogan-swap)} {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@for $i from 1 to $slogan-items {
+  $animation: slogan-#{($i+1)};
+
+  .slogan li:nth-child(#{($i+1)}) { animation: #{($slogan-time * $slogan-items)} infinite $animation; }
+  @keyframes #{$animation} {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    #{($slogan-length * $i - $slogan-swap)} {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    #{($slogan-length * $i)} {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    #{($slogan-length * ($i + 1) - $slogan-swap)} {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #{($slogan-length * ($i + 1))} {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+}
+
+// Skills
+.skills-section {
+  --global-text-color: white;
+
+  position: relative;
+  width: 100%;
+  padding: 3rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX( -50%);
+    height: 100%;
+    width: 100vw;
+    background: var(--global-theme-color);
+    z-index: -1;
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  .skills-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    .skills-skill {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: end;
+      gap: 0 10px;
+      
+      label {
+        width: 150px;
+        text-align: right;
+        line-height: 1;
+      }
+
+      progress {
+        --progress-bg: var(--global-accent-color);
+        --progress-fg: white;
+        width: 100px;
+        flex-grow: 1;
+        border-radius: 25px;
+        border: none;
+      }
+      
+      // Background color
+      progress::-webkit-progress-bar { background-color: var(--progress-bg); width: 100%; }
+      progress { background-color: var(--progress-bg); }
+
+      // Foreground color
+      progress::-webkit-progress-value {background-color: var(--progress-fg) !important;}
+      progress::-moz-progress-bar {background-color: var(--progress-fg) !important;}
+      progress {color: var(--progress-fg);}
+
+      // Rounded corners
+      progress::-webkit-progress-bar { border-radius: 25px; }
+      progress::-webkit-progress-value { border-radius: 25px; }
+      progress::-moz-progress-bar { border-radius: 25px; }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    .skills-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-section {
+    .skills-content {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -405,31 +405,45 @@ blockquote {
 
 
 // Footer
-footer.fixed-bottom {
-  background-color: var(--global-footer-bg-color);
-  font-size: 0.75rem;
-
+footer {
   .container {
     color: var(--global-footer-text-color);
-    padding-top: 9px;
-    padding-bottom: 8px;
   }
 
   a {
-    color: var(--global-footer-link-color);
+    color: var(--global-footer-text-color);
 
     &:hover {
-      color: var(--global-theme-color);
+      color: var(--global-footer-link-color);
       text-decoration: none;
     }
   }
 }
 
+footer.fixed-bottom {
+  background-color: var(--global-footer-bg-color);
+  font-size: 0.75rem;
+
+  .container {
+    padding-top: 9px;
+    padding-bottom: 8px;
+  }
+}
+
 footer.sticky-bottom {
   border-top: 1px solid var(--global-divider-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 1rem 0;
   font-size: 0.9rem;
+  text-align: center;
+}
+
+body.color-footer footer {
+  background-color: var(--global-theme-color);
+  
+  .container {
+    --global-footer-text-color: #{$white-color};
+    --global-footer-link-color: var(--global-divider-color);
+  }
 }
 
 // CV
@@ -568,7 +582,6 @@ footer.sticky-bottom {
 
 
 // Distill
-
 .distill {
   a:hover {
     border-bottom-color: var(--global-theme-color);
@@ -578,6 +591,9 @@ footer.sticky-bottom {
 
 
 // Projects
+.post-header:has(+ article .projects) {
+  margin-bottom: -3rem;
+}
 
 .projects {
   a {
@@ -591,6 +607,20 @@ footer.sticky-bottom {
   }
 
   .card {
+    &.card-horizontal {
+      & > div.row {
+        height: 100%;
+      }
+
+      .card-img {
+        height: 100%;
+      }
+
+      figure {
+        height: 100%;
+      }
+    }
+
     img {
       width: 100%;
     }
@@ -603,6 +633,12 @@ footer.sticky-bottom {
     .row {
       display: flex;
       align-items: center;
+    }
+
+    .card-meta {
+      margin-top: -0.75rem;
+      margin-bottom: 0.75rem;
+      font-style: italic;
     }
   }
 
@@ -622,9 +658,106 @@ footer.sticky-bottom {
   }
 }
 
+@media (min-width: 768px) {
+  .projects .card.card-horizontal {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects .card.card-horizontal .card-img {
+    height: 150px;
+  }
+}
+
+// Figures
+figure {
+  img.contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  img.fill {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  img.pad {
+    padding: 20px;
+  }
+}
+
+// Flexgrid
+.flexgrid {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  gap: 10px;
+  padding: 0 15px;
+
+  .grid-item {
+    width: 240px;
+    max-width: 100%;
+
+    .card {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      padding-bottom: 20px;
+      grid-template-rows: 240px min-content auto;
+      grid-template-areas:
+        "fig"
+        "title"
+        "text"
+      ;
+
+      figure {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+
+          &.pad {
+            padding: 20px;
+          }
+
+          &.fill {
+            object-fit: cover;
+          }
+        }
+      }
+
+      .card-title {
+        grid-area: title;
+        padding: 20px 20px 0;
+        font-weight: 400;
+      }
+
+      .card-text {
+        grid-area: text;
+        padding: 0 20px;
+        font-size: .9rem;
+        font-weight: 400;
+        color: #747373;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .flexgrid {
+    flex-flow: column nowrap;
+
+    .grid-item {
+      width: 100%;
+    }
+  }
+}
 
 // Publications
-
 .publications {
   margin-top: 2rem;
 
@@ -787,15 +920,34 @@ footer.sticky-bottom {
         transition: all 0.15s ease;
       }
 
+      div.abstract {
+        ol {
+          margin: 10px;
+          padding-left: 20px;
+        }
+      }
+
       div.abstract.hidden {
         border: dashed 1px var(--global-bg-color);
       }
 
       div.abstract.hidden.open {
-        border-color: var(--global-text-color);
+        border-color: var(--global-text-color-light);
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+  .publications h2.bibliography {
+    margin-bottom: unset;
+  }
+}
+
+// Page.html
+.reference-title {
+  margin-top: 2rem;
+  margin-bottom: -1rem;
 }
 
 // Rouge Color Customization
@@ -860,7 +1012,7 @@ html.transition *:after {
   }
 }
 
-progress {
+#progress {
   /* Positioning */
   position: fixed;
   left: 0;
