@@ -1,69 +1,91 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
-    "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
-    },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
+    "name": "Tanguy Ophoff",
+    "website": "https://ophoff.dev",
+    "linkedin": "https://linkedin.com/in/tophoff",
+    "summary": "Detail-oriented computer vision engineer who loves to work with new technologies in order to solve today's challenges."
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
+      "name": "EAVISE Research group, KU Leuven, Belgium",
+      "position": "Post-Doc Researcher",
+      "url": "https://www.kuleuven.be",
+      "startDate": "2023",
+      "endDate": "now",
+      "summary": "",
       "highlights": [
-        "Relativity"
+        "Deep Learning",
+        "Computer Vision",
+        "Object Detection & Tracking",
+        "Object Classification"
+      ]
+    },
+    {
+      "name": "EAVISE Research group, KU Leuven, Belgium",
+      "position": "PhD Researcher",
+      "url": "https://www.kuleuven.be",
+      "startDate": "2017",
+      "endDate": "2023",
+      "summary": "PhD Researcher working on Aerial Object Detection",
+      "highlights": [
+        "Deep Learning",
+        "Computer Vision",
+        "Object Detection",
+        "Multimodal Fusion",
+        "Embedded Platforms",
+        "Aerial Orthomosaics",
+        "Satellite Imagery"
       ]
     }
   ],
   "volunteer": [],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "KU Leuven, Belgium",
+      "url": "https://www.kuleuven.be",
+      "area": "Computer Engineering Technology",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
+      "startDate": "2017",
+      "endDate": "2023",
       "score": "",
-      "courses": [
-        "Theory of Relativity"
-      ]
+      "title": "Aerial Object Detection"
+    },
+    {
+      "institution": "KU Leuven, Belgium",
+      "url": "https://www.kuleuven.be",
+      "area": "Computer Engineering Technology",
+      "studyType": "Msc",
+      "startDate": "2016",
+      "endDate": "2017",
+      "score": "cum laude",
+      "title": "Bare Metal Video Decoder"
+    },
+    {
+      "institution": "KU Leuven, Belgium",
+      "url": "https://www.kuleuven.be",
+      "area": "Computer Engineering Technology",
+      "studyType": "Bsc",
+      "startDate": "2013",
+      "endDate": "2016",
+      "score": "cum laude",
+      "title": "HDD Clock in Assembly on ADuC832"
     }
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "title": "Willy Asselman Award",
+      "date": "2017",
+      "awarder": "KU Leuven",
+      "summary": "Award for most innovative thesis of all graduating industrial engineers at De Nayer, KU Leuven."
     }
   ],
-  "certificates": [],
-  "publications": [],
-  "skills": [],
   "languages": [
     {
-      "language": "German",
+      "language": "Dutch",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "French",
       "fluency": "Native speaker"
     },
     {
@@ -71,6 +93,9 @@
       "fluency": "Fluent"
     }
   ],
+  "certificates": [],
+  "publications": [],
+  "skills": [],
   "interests": [],
   "references": [],
   "projects": []

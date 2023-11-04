@@ -2,31 +2,32 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Tanguy Ophoff
     - name: Date of Birth
-      value: 14th March 1879
+      value: 8th May 1995
     - name: Languages
-      value: English, German
+      value: Dutch, French, English
 
 - title: Education
   type: time_table
   contents:
     - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+      institution: KU Leuven, Belgium
+      year: 2023
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - title: Aerial Object Detection
+    - title: Master of Science, Computer Engineering Technology
+      institution: KU Leuven, Belgium
+      year: 2017
       description:
-        - Description 1.
-        - Description 2.
+        - IT Specialization
+        - Master's Thesis: Bare Metal Video Decoder @ E.D.&A.
+    - title: Erasmus
+      institution: Halmstad University, Sweden
+      year: 2015
+      description:
+        - A semester abroad in Sweden with the Erasmus programme
+
 
 - title: Experience
   type: time_table
@@ -61,13 +62,6 @@
       institution: University of Zurich, Zurich, Switzerland
       year: 1909 - 1911
 
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
 - title: Honors and Awards
   type: time_table
   contents:
@@ -78,20 +72,3 @@
     - year: 2029
       items: 
         - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
