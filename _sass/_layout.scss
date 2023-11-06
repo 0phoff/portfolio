@@ -205,6 +205,7 @@ $slogan-swap: calc($slogan-length / 4);
 // Skills
 .skills-section {
   --global-text-color: white;
+  --skew: 3deg;
 
   position: relative;
   width: 100%;
@@ -218,7 +219,7 @@ $slogan-swap: calc($slogan-length / 4);
     left: 50%;
     height: 50%;
     width: 100vw;
-    transform: translateX(-50%) skewY(3deg);
+    transform: translateX(-50%) skewY(var(--skew));
     transform-origin: 100% 0;
     background: var(--global-theme-color);
     z-index: -1;
@@ -297,5 +298,11 @@ $slogan-swap: calc($slogan-length / 4);
     .skills-content {
       grid-template-columns: 1fr;
     }
+  }
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .skills-section {
+    --skew: 5deg;
   }
 }

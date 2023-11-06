@@ -49,7 +49,7 @@ social: true  # includes social icons at the bottom of the page
 
 I am a detail-oriented computer vision engineer who loves to work with new technologies in order to solve today's challenges.
 As a highly experienced programmer, I strive to build robust applications and pipelines in many different programming languages such as Python, C/C++ & JavaScript.
-I possess an unwavering passion for everything related to AI and love to tinker around on my different linux machines.
+I possess an unwavering passion for everything related to AI and love to tinker around on various linux systems.
 
 From 2017 to 2023, I worked as a PhD researcher at the [EAVISE](https://eavise.be) research group of the KU Leuven.
 I worked on a variety of different projects for industrial partners, researching how to best optimize object detection from aerial viewpoints.
